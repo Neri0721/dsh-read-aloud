@@ -1,0 +1,5 @@
+# dsh-read-aloud bundle patch: 宿主半边(edge-tts HTTP 路由) + 客户端半边(朗读按钮/设置页)
+# 纯 insert(id/name) 可热挂载，无需重启 DSH。
+- insert:
+    - id: dsh-read-aloud
+      name: dsh-read-aloud

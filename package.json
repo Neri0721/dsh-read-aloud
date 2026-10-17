@@ -1,0 +1,30 @@
+{
+  "name": "dsh-read-aloud",
+  "version": "0.1.0",
+  "description": "DSH 朗读插件：一键朗读回复/选中文本，多音色（含萝莉音预设），基于 edge-tts 微软免费语音合成",
+  "type": "module",
+  "main": "index.js",
+  "files": [
+    "client.js",
+    "index.js",
+    "tts.py",
+    "cordis.patch.yml"
+  ],
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./package.json": "./package.json"
+  },
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "keywords": ["dsh", "dsh-plugin", "tts", "read-aloud", "edge-tts"],
+  "dsh": {
+    "bundle": { "patch": "./cordis.patch.yml" },
+    "client": {
+      "inject": ["@deepseek-ai/dsh-client-runtime", "@deepseek-ai/dsh-client-connection", "@deepseek-ai/dsh-client-ui-settings"],
+      "platform": "web"
+    }
+  },
+  "license": "MIT"
+}
